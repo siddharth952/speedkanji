@@ -16,9 +16,15 @@
 		E16932A923884F990017B4FE /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = E16932A823884F990017B4FE /* LBTATools */; };
 		E16932AB23884FC70017B4FE /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16932AA23884FC70017B4FE /* IntroView.swift */; };
 		E16CAFE1238974840005483D /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CAFE0238974840005483D /* BarView.swift */; };
+		E18445E4238A6D5D00EA01C1 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18445E3238A6D5D00EA01C1 /* Artwork.swift */; };
+		E18445E6238A77AD00EA01C1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18445E5238A77AD00EA01C1 /* DetailView.swift */; };
+		E18445EB238AAF0C00EA01C1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E18445EA238AAF0C00EA01C1 /* Alamofire */; };
+		E18445EE238AAFC800EA01C1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E18445ED238AAFC800EA01C1 /* SwiftyJSON */; };
+		E18445F1238AB00A00EA01C1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E18445F0238AB00A00EA01C1 /* SDWebImageSwiftUI */; };
 		E1E0510B2389A908001F22B2 /* IntroductionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */; };
 		E1E0510E2389AB44001F22B2 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510D2389AB44001F22B2 /* TitleView.swift */; };
 		E1E051102389ABCA001F22B2 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510F2389ABCA001F22B2 /* ButtonModifier.swift */; };
+		E1E051162389B3B9001F22B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E051152389B3B9001F22B2 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +38,12 @@
 		E16932A1238848410017B4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E16932AA23884FC70017B4FE /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		E16CAFE0238974840005483D /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		E18445E3238A6D5D00EA01C1 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artwork.swift; path = "../../../../../../Downloads/SwiftUI-Nav-Materials/PublicArt-Starter/PublicArt/PublicArt/Artwork.swift"; sourceTree = "<group>"; };
+		E18445E5238A77AD00EA01C1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionDetailView.swift; sourceTree = "<group>"; };
 		E1E0510D2389AB44001F22B2 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		E1E0510F2389ABCA001F22B2 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
+		E1E051152389B3B9001F22B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +51,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18445F1238AB00A00EA01C1 /* SDWebImageSwiftUI in Frameworks */,
+				E18445EE238AAFC800EA01C1 /* SwiftyJSON in Frameworks */,
 				E16932A923884F990017B4FE /* LBTATools in Frameworks */,
+				E18445EB238AAF0C00EA01C1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,16 +80,16 @@
 		E16932922388483E0017B4FE /* SpeedKanji */ = {
 			isa = PBXGroup;
 			children = (
+				E16CAFDE238974380005483D /* Controller */,
 				E16CAFDF238974420005483D /* Model */,
-				E16932932388483E0017B4FE /* AppDelegate.swift */,
-				E16932952388483E0017B4FE /* SceneDelegate.swift */,
 				E16CAFE223897AFA0005483D /* View */,
 				E16932972388483E0017B4FE /* ContentView.swift */,
 				E1693299238848410017B4FE /* Assets.xcassets */,
 				E169329E238848410017B4FE /* LaunchScreen.storyboard */,
+				E16932932388483E0017B4FE /* AppDelegate.swift */,
+				E16932952388483E0017B4FE /* SceneDelegate.swift */,
 				E16932A1238848410017B4FE /* Info.plist */,
 				E169329B238848410017B4FE /* Preview Content */,
-				E16CAFDE238974380005483D /* Controller */,
 			);
 			path = SpeedKanji;
 			sourceTree = "<group>";
@@ -107,8 +119,9 @@
 		E16CAFE223897AFA0005483D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1E051142389B39F001F22B2 /* Results */,
+				E1E051132389B37A001F22B2 /* Demo */,
 				E1E0510C2389AB1E001F22B2 /* Intro */,
-				E16CAFE0238974840005483D /* BarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +135,24 @@
 				E1E0510D2389AB44001F22B2 /* TitleView.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		E1E051132389B37A001F22B2 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				E18445E3238A6D5D00EA01C1 /* Artwork.swift */,
+				E1E051152389B3B9001F22B2 /* MainView.swift */,
+				E18445E5238A77AD00EA01C1 /* DetailView.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		E1E051142389B39F001F22B2 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				E16CAFE0238974840005483D /* BarView.swift */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +173,9 @@
 			name = SpeedKanji;
 			packageProductDependencies = (
 				E16932A823884F990017B4FE /* LBTATools */,
+				E18445EA238AAF0C00EA01C1 /* Alamofire */,
+				E18445ED238AAFC800EA01C1 /* SwiftyJSON */,
+				E18445F0238AB00A00EA01C1 /* SDWebImageSwiftUI */,
 			);
 			productName = SpeedKanji;
 			productReference = E16932902388483E0017B4FE /* SpeedKanji.app */;
@@ -173,6 +207,9 @@
 			mainGroup = E16932872388483E0017B4FE;
 			packageReferences = (
 				E16932A723884F990017B4FE /* XCRemoteSwiftPackageReference "LBTATools" */,
+				E18445E9238AAF0C00EA01C1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E18445EC238AAFC800EA01C1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				E18445EF238AB00A00EA01C1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = E16932912388483E0017B4FE /* Products */;
 			projectDirPath = "";
@@ -202,7 +239,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E16932AB23884FC70017B4FE /* IntroView.swift in Sources */,
+				E18445E6238A77AD00EA01C1 /* DetailView.swift in Sources */,
+				E18445E4238A6D5D00EA01C1 /* Artwork.swift in Sources */,
 				E16932942388483E0017B4FE /* AppDelegate.swift in Sources */,
+				E1E051162389B3B9001F22B2 /* MainView.swift in Sources */,
 				E16932962388483E0017B4FE /* SceneDelegate.swift in Sources */,
 				E1E0510E2389AB44001F22B2 /* TitleView.swift in Sources */,
 				E1E051102389ABCA001F22B2 /* ButtonModifier.swift in Sources */,
@@ -412,6 +452,30 @@
 				minimumVersion = 1.0.14;
 			};
 		};
+		E18445E9238AAF0C00EA01C1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
+		E18445EC238AAFC800EA01C1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		E18445EF238AB00A00EA01C1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -419,6 +483,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E16932A723884F990017B4FE /* XCRemoteSwiftPackageReference "LBTATools" */;
 			productName = LBTATools;
+		};
+		E18445EA238AAF0C00EA01C1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E18445E9238AAF0C00EA01C1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E18445ED238AAFC800EA01C1 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E18445EC238AAFC800EA01C1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E18445F0238AB00A00EA01C1 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E18445EF238AB00A00EA01C1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

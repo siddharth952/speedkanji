@@ -19,9 +19,13 @@ struct IntroView:View{
         ZStack{
             Color("appBackground").edgesIgnoringSafeArea(.all)
             
-            VStack{
+            VStack(alignment:.center){
+                
+                Spacer()
+                
                 TitleView()
                 
+                Spacer()
                 
                 VStack(alignment: .leading) {
                     InformationDetailView(title: "Match", subTitle: "Match the gradients by moving the Red, Green and Blue sliders for the left and right colors.", imageName: "slider.horizontal.below.rectangle")
@@ -29,9 +33,22 @@ struct IntroView:View{
                     InformationDetailView(title: "Precise", subTitle: "More precision with the steppers to get that 100 score.", imageName: "minus.slash.plus")
 
                     InformationDetailView(title: "Score", subTitle: "A detailed score and comparsion of your gradient and the target gradient.", imageName: "checkmark.square")
+                    
+                    Spacer()
                 }
                 .padding(.horizontal)
                 
+                Button(action: {
+                    
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.success)
+                    
+                }) {
+                    Text("Continue")
+                        .customButton()
+                }
+                .padding(.bottom, 5)
+                .padding(.horizontal)
                 
             }
         }
