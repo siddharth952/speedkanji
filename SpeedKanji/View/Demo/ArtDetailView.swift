@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct ArtDetailView: View {
   let artwork: Artwork
 
   var body: some View {
@@ -37,6 +37,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(artwork: artData[0])
+        ArtDetailView(artwork: artData[0])
     }
 }

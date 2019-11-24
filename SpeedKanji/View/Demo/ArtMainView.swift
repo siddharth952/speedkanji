@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct MainView: View {
+struct ArtMainView: View {
     //let s = ["Sta","LBTA","Test"]
     //Artwork is not hashable change \.self to \.title
     //MainView struct is immutable @State property wrapper able to assign a value to anArtworkProperty
@@ -29,7 +29,7 @@ struct MainView: View {
         NavigationView{
             List(showArt/*,id:\.id*/){ artwork in
                 //Text(s)
-                NavigationLink(destination: DetailView(artwork: artwork)){
+                NavigationLink(destination: ArtDetailView(artwork: artwork)){
                     Text("\(artwork.reaction) \(artwork.title)").contextMenu{
                         Button("Love it:❤️"){
                             self.setReaction("💕", for: artwork)
@@ -55,7 +55,7 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct ArtMainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
     }
