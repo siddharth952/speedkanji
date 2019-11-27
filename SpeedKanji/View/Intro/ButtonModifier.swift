@@ -20,6 +20,7 @@ struct ButtonModifier: ViewModifier {
             .background(RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .fill(Color.mainColor))
             .padding(.bottom)
+        
     }
 }
 

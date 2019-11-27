@@ -18,9 +18,9 @@ struct BarView:View{
         VStack{
            ZStack(alignment: .bottom){
                Capsule().frame(width: 30, height: 200)
-                   .foregroundColor(Color(#colorLiteral(red: 0.2855904102, green: 0.7915002108, blue: 0.6359320879, alpha: 1)))
+                   .foregroundColor(Color(#colorLiteral(red: 0.9999071956, green: 1, blue: 0.999881804, alpha: 1)))
                Capsule().frame(width: 30, height: value)
-                   .foregroundColor(.purple)
+                   .foregroundColor(.red)
            }
            Text(day_text)
         }

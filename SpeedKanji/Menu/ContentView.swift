@@ -7,7 +7,7 @@ struct ContentView : View {
     
     var body: some View {
         VStack() {
-            Text("Card in SwiftUI")
+            Text("Learn N5 Kanji")
                 .foregroundColor(.white)
                 .fontWeight(.bold)
                 .font(.largeTitle)
@@ -21,6 +21,12 @@ struct ContentView : View {
                 .cornerRadius(0)
                 .lineLimit(.none)
             
+            if(show){Text("Continue")
+                .foregroundColor(Color(hue: 0.498, saturation: 0.609, brightness: 1.0))
+            .fontWeight(.bold)
+            .font(.title)
+                .cornerRadius(0)}
+            
             Spacer()
             
             Button(action: {
@@ -31,7 +37,7 @@ struct ContentView : View {
                         .foregroundColor(Color(hue: 0.498, saturation: 0.609, brightness: 1.0))
                         .font(Font.title.weight(.semibold))
                         .imageScale(.small)
-                    Text(show ? "to Card" : "to Area")
+                    Text(show ? "Collapse" : "Details") // true:false
                         .foregroundColor(Color(hue: 0.498, saturation: 0.609, brightness: 1.0))
                         .fontWeight(.bold)
                         .font(.title)

@@ -23,6 +23,7 @@
 		E18445F1238AB00A00EA01C1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E18445F0238AB00A00EA01C1 /* SDWebImageSwiftUI */; };
 		E18445F4238AB14700EA01C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18445F3238AB14700EA01C1 /* MainView.swift */; };
 		E1C0541F238E5E0200949D01 /* SimpleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C0541E238E5E0200949D01 /* SimpleProgressBar.swift */; };
+		E1C05424238E6D7000949D01 /* resultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C05423238E6D7000949D01 /* resultView.swift */; };
 		E1E0510B2389A908001F22B2 /* IntroductionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */; };
 		E1E0510E2389AB44001F22B2 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510D2389AB44001F22B2 /* TitleView.swift */; };
 		E1E051102389ABCA001F22B2 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510F2389ABCA001F22B2 /* ButtonModifier.swift */; };
@@ -44,6 +45,7 @@
 		E18445E5238A77AD00EA01C1 /* ArtDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailView.swift; sourceTree = "<group>"; };
 		E18445F3238AB14700EA01C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E1C0541E238E5E0200949D01 /* SimpleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProgressBar.swift; sourceTree = "<group>"; };
+		E1C05423238E6D7000949D01 /* resultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultView.swift; sourceTree = "<group>"; };
 		E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionDetailView.swift; sourceTree = "<group>"; };
 		E1E0510D2389AB44001F22B2 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		E1E0510F2389ABCA001F22B2 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 				E16CAFDE238974380005483D /* Controller */,
 				E16CAFDF238974420005483D /* Model */,
 				E16CAFE223897AFA0005483D /* View */,
-				E16932972388483E0017B4FE /* ContentView.swift */,
+				E1C05421238E664500949D01 /* Menu */,
 				E1693299238848410017B4FE /* Assets.xcassets */,
 				E169329E238848410017B4FE /* LaunchScreen.storyboard */,
 				E16932932388483E0017B4FE /* AppDelegate.swift */,
@@ -148,13 +150,21 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		E1C05421238E664500949D01 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E16932972388483E0017B4FE /* ContentView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		E1E0510C2389AB1E001F22B2 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
 				E16932AA23884FC70017B4FE /* IntroView.swift */,
-				E1E0510F2389ABCA001F22B2 /* ButtonModifier.swift */,
 				E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */,
 				E1E0510D2389AB44001F22B2 /* TitleView.swift */,
+				E1E0510F2389ABCA001F22B2 /* ButtonModifier.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -173,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				E16CAFE0238974840005483D /* BarView.swift */,
+				E1C05423238E6D7000949D01 /* resultView.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -269,6 +280,7 @@
 				E1E051162389B3B9001F22B2 /* ArtMainView.swift in Sources */,
 				E16932962388483E0017B4FE /* SceneDelegate.swift in Sources */,
 				E1E0510E2389AB44001F22B2 /* TitleView.swift in Sources */,
+				E1C05424238E6D7000949D01 /* resultView.swift in Sources */,
 				E1E051102389ABCA001F22B2 /* ButtonModifier.swift in Sources */,
 				E1E0510B2389A908001F22B2 /* IntroductionDetailView.swift in Sources */,
 				E16932982388483E0017B4FE /* ContentView.swift in Sources */,

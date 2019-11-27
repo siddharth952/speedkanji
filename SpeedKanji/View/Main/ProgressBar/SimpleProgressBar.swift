@@ -28,12 +28,18 @@ struct SimpleProgressBar: View {
                         .frame(width:300,height: 20)
                     
                     RoundedRectangle(cornerRadius: 20)
-                        .foregroundColor(.green)
-                        .frame(width:300*currentProgress,height:20)
+                        .foregroundColor(.red)
+                        .frame(width:300*currentProgress+0.2,height:20)
                     
+                HStack {
                     Button(action: {self.startLoading()}) {
-                        Text("Start timer")
+                            Text("Start timer")
                     }
+                    Button(action: {self.currentProgress = self.currentProgress/5}) {
+                        Text("Correct")
+                    }
+                }
+                    
                     
                     
             }
@@ -51,14 +57,12 @@ struct SimpleProgressBar: View {
                 self.currentProgress += 0.01
                 if self.currentProgress >= 1.0 {
                     timer.invalidate()
+                    print("You lost!")
                 }
             }
         }
     }
 }
-
-
-
 
 
 

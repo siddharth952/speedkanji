@@ -12,34 +12,35 @@ struct MainView: View {
     //State Variables
     @State var value: CGFloat = 0.0
     
-    
-    
-    
-    
-    
+
      var body: some View {
+        
+        ZStack {
+            Color("appBackground").edgesIgnoringSafeArea(.all)
             VStack(alignment: .center, spacing: 20) {
-                TopStack()
-                    .padding(.horizontal)
-                Spacer()
-                
-                CardView()
-                    .padding(.horizontal, 10)
-                BottomStack()
-                
-                SimpleProgressBar()
-            }
+                    TopStack()
+                        .padding(.horizontal)
+                    Spacer()
+                    
+                    CardView()
+                        .padding(.horizontal, 10)
+                 
+                    BottomStack()
+               
+                    
+                    SimpleProgressBar()
+                }
             .padding(.bottom, 15)
         }
+        }
     }
-
-
-
 
 
 struct TopStack: View {
     var body: some View {
         HStack(alignment:.center) {
+                    button(for: "person")
+                        .foregroundColor(.primary)
                     Spacer()
                     button(for: "stop")
                         .padding(.trailing)
@@ -57,7 +58,7 @@ struct UserImageView : View {
         Image("kanjiimg")
         .resizable()
         .scaledToFit()
-            .cornerRadius(10, antialiased: true)
+        .cornerRadius(10, antialiased: true)
             
     }
 }
@@ -112,24 +113,15 @@ struct BottomStack : View {
     }
 }
 
-
-
-
-
-
 //Helper: To create buttons based on image asset name
 func button(for icon: String) -> some View {
     Button(action: {}) {
         Image(systemName:icon)
         .resizable()
             .frame(width: 32, height: 32, alignment: .center)
-            
-        
-        
+
     }
 }
-
-
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
