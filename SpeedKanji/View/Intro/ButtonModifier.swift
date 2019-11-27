@@ -9,12 +9,14 @@
 import SwiftUI
 
 struct ButtonModifier: ViewModifier {
+    var width:CGFloat = 360
+    
     func body(content: Content) -> some View {
         content
             .foregroundColor(.white)
             .font(.system(.headline, design: .rounded))
             .padding()
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+            .frame(minWidth: 0, maxWidth: width, alignment: .center)
             .background(RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .fill(Color.mainColor))
             .padding(.bottom)
@@ -22,8 +24,8 @@ struct ButtonModifier: ViewModifier {
 }
 
 extension View {
-    func customButton() -> ModifiedContent<Self, ButtonModifier> {
-        return modifier(ButtonModifier())
+    func customButton(width:CGFloat) -> ModifiedContent<Self, ButtonModifier> {
+        return modifier(ButtonModifier(width: width))
     }
 }
 

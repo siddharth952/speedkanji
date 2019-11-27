@@ -22,6 +22,7 @@
 		E18445EE238AAFC800EA01C1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E18445ED238AAFC800EA01C1 /* SwiftyJSON */; };
 		E18445F1238AB00A00EA01C1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E18445F0238AB00A00EA01C1 /* SDWebImageSwiftUI */; };
 		E18445F4238AB14700EA01C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18445F3238AB14700EA01C1 /* MainView.swift */; };
+		E1C0541F238E5E0200949D01 /* SimpleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C0541E238E5E0200949D01 /* SimpleProgressBar.swift */; };
 		E1E0510B2389A908001F22B2 /* IntroductionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */; };
 		E1E0510E2389AB44001F22B2 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510D2389AB44001F22B2 /* TitleView.swift */; };
 		E1E051102389ABCA001F22B2 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510F2389ABCA001F22B2 /* ButtonModifier.swift */; };
@@ -42,6 +43,7 @@
 		E18445E3238A6D5D00EA01C1 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artwork.swift; path = "../../../../../../Downloads/SwiftUI-Nav-Materials/PublicArt-Starter/PublicArt/PublicArt/Artwork.swift"; sourceTree = "<group>"; };
 		E18445E5238A77AD00EA01C1 /* ArtDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailView.swift; sourceTree = "<group>"; };
 		E18445F3238AB14700EA01C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E1C0541E238E5E0200949D01 /* SimpleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProgressBar.swift; sourceTree = "<group>"; };
 		E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionDetailView.swift; sourceTree = "<group>"; };
 		E1E0510D2389AB44001F22B2 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		E1E0510F2389ABCA001F22B2 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E13ED0C2238D221000A78BFB /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				E1C0541E238E5E0200949D01 /* SimpleProgressBar.swift */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
 		E16932872388483E0017B4FE = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				E18445F3238AB14700EA01C1 /* MainView.swift */,
+				E13ED0C2238D221000A78BFB /* ProgressBar */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -253,6 +264,7 @@
 				E18445F4238AB14700EA01C1 /* MainView.swift in Sources */,
 				E18445E6238A77AD00EA01C1 /* ArtDetailView.swift in Sources */,
 				E18445E4238A6D5D00EA01C1 /* Artwork.swift in Sources */,
+				E1C0541F238E5E0200949D01 /* SimpleProgressBar.swift in Sources */,
 				E16932942388483E0017B4FE /* AppDelegate.swift in Sources */,
 				E1E051162389B3B9001F22B2 /* ArtMainView.swift in Sources */,
 				E16932962388483E0017B4FE /* SceneDelegate.swift in Sources */,

@@ -9,14 +9,25 @@
 import SwiftUI
 
 struct MainView: View {
+    //State Variables
+    @State var value: CGFloat = 0.0
+    
+    
+    
+    
+    
+    
      var body: some View {
             VStack(alignment: .center, spacing: 20) {
                 TopStack()
                     .padding(.horizontal)
+                Spacer()
                 
                 CardView()
                     .padding(.horizontal, 10)
                 BottomStack()
+                
+                SimpleProgressBar()
             }
             .padding(.bottom, 15)
         }
@@ -28,15 +39,12 @@ struct MainView: View {
 
 struct TopStack: View {
     var body: some View {
-        HStack(alignment: .top) {
-                    button(for: "person")
-                        .padding(.leading)
-                        .foregroundColor(.primary)
-                        
+        HStack(alignment:.center) {
                     Spacer()
                     button(for: "stop")
+                        .padding(.trailing)
                         .foregroundColor(.primary)
-                    Spacer()
+                    
                     button(for: "arrow.right.circle")
                         .padding(.trailing)
                         .foregroundColor(.primary)
@@ -49,15 +57,8 @@ struct UserImageView : View {
         Image("kanjiimg")
         .resizable()
         .scaledToFit()
-            .overlay (
-                Rectangle()
-                    .fill (
-                        LinearGradient(gradient: Gradient(colors: [.clear, .blue]),
-                                       startPoint: .center, endPoint: .bottom)
-                    )
-                    .clipped()
-            )
             .cornerRadius(10, antialiased: true)
+            
     }
 }
 
@@ -74,15 +75,44 @@ struct CardView : View {
 
 struct BottomStack : View {
     var body: some View {
-        HStack {
-            button(for: "flame")
-            button(for: "flame")
-            button(for: "flame")
-            button(for: "flame")
-            button(for: "flame")
+        VStack {
+            HStack {
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                     Text("ときう")
+                        .customButton(width:180)
+                        .padding(.all,10)
+                    
+                }
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                     Text("ときう")
+                        .customButton(width:180)
+                        .padding(.all,10)
+                    
+                }
+                
+            }
+            //HStack 2
+            HStack{
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                     Text("ときう")
+                        .customButton(width:180)
+                        .padding(.all,10)
+                    
+                }
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                     Text("ときう")
+                        .customButton(width:180)
+                        .padding(.all,10)
+                    
+                }
+                
+            }
         }
     }
 }
+
+
 
 
 

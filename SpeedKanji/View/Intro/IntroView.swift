@@ -45,7 +45,7 @@ struct IntroView:View{
                     
                 }) {
                     Text("Continue")
-                        .customButton()
+                        .customButton(width:360)
                 }
                 .padding(.bottom, 5)
                 .padding(.horizontal)
