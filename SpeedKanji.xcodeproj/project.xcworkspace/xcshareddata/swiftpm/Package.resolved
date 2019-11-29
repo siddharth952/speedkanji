@@ -6,35 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "747c8db8d57b68d5e35275f10c92d55f982adbd4",
-          "version": "4.9.1"
-        }
-      },
-      {
-        "package": "LBTATools",
-        "repositoryURL": "https://github.com/bhlvoong/LBTATools.git",
-        "state": {
-          "branch": null,
-          "revision": "c404996aa0b29174944c1822e27c24af73f8d02b",
-          "version": "1.0.14"
-        }
-      },
-      {
-        "package": "SDWebImage",
-        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
-        "state": {
-          "branch": null,
-          "revision": "74526bdde4b080916100261d4301dad5863b67df",
-          "version": "5.3.2"
-        }
-      },
-      {
-        "package": "SDWebImageSwiftUI",
-        "repositoryURL": "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
-        "state": {
-          "branch": null,
-          "revision": "fab4ec467604d9b929d64fd32b1d11e38c026b47",
-          "version": "0.8.6"
+          "revision": "2cbf59935fbb1f26e352ce4db53f1cf9408d5313",
+          "version": "5.0.0-rc.3"
         }
       },
       {

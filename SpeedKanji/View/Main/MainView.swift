@@ -8,9 +8,14 @@
 
 import SwiftUI
 
+//Networking
+let network = NetworkManager()
+
 struct MainView: View {
     //State Variables
     @State var value: CGFloat = 0.0
+    
+   
     
 
      var body: some View {
@@ -59,6 +64,7 @@ struct UserImageView : View {
         .resizable()
         .scaledToFit()
         .cornerRadius(10, antialiased: true)
+        
             
     }
 }
@@ -78,10 +84,11 @@ struct BottomStack : View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {network.fetchData(input_kanji: "東") }) {
                      Text("ときう")
                         .customButton(width:180)
                         .padding(.all,10)
+                    .shadow(radius: 10)
                     
                 }
                 
@@ -89,6 +96,7 @@ struct BottomStack : View {
                      Text("ときう")
                         .customButton(width:180)
                         .padding(.all,10)
+                    .shadow(radius: 10)
                     
                 }
                 
@@ -99,12 +107,14 @@ struct BottomStack : View {
                      Text("ときう")
                         .customButton(width:180)
                         .padding(.all,10)
+                    .shadow(radius: 10)
                     
                 }
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                      Text("ときう")
                         .customButton(width:180)
                         .padding(.all,10)
+                    .shadow(radius: 10)
                     
                 }
                 

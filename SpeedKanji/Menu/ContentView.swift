@@ -50,9 +50,9 @@ struct ContentView : View {
         .padding()
         .padding(.top, 15)
         .frame(width: show ? 350 : 290, height: show ? 420 : 260)
-        .background(Color.blue
-        )
+        .background(Color.blue)
         .cornerRadius(30)
+        .shadow(radius: 20)
         .animation(.spring())
     }
 }
