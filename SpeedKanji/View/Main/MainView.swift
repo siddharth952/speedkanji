@@ -11,6 +11,9 @@ import SwiftUI
 //Networking
 let network = NetworkManager()
 
+
+
+
 struct MainView: View {
     //State Variables
     @State var value: CGFloat = 0.0
@@ -92,7 +95,7 @@ struct BottomStack : View {
                     
                 }
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {network.fetchN5()}) {
                      Text("ときう")
                         .customButton(width:180)
                         .padding(.all,10)
@@ -103,7 +106,7 @@ struct BottomStack : View {
             }
             //HStack 2
             HStack{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {network.printDatabase()}) {
                      Text("ときう")
                         .customButton(width:180)
                         .padding(.all,10)
