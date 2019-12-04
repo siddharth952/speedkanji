@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E11C0BC12397FD7700B0D881 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C0BC02397FD7700B0D881 /* SignIn.swift */; };
 		E13B0E4D2390368100FF8A9A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E13B0E4C2390368100FF8A9A /* Alamofire */; };
 		E16932942388483E0017B4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16932932388483E0017B4FE /* AppDelegate.swift */; };
 		E16932962388483E0017B4FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16932952388483E0017B4FE /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E11C0BC02397FD7700B0D881 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		E16932902388483E0017B4FE /* SpeedKanji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedKanji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16932932388483E0017B4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E16932952388483E0017B4FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				E1E051142389B39F001F22B2 /* Results */,
 				E1E051132389B37A001F22B2 /* Demo */,
 				E1E0510C2389AB1E001F22B2 /* Intro */,
+				E11C0BC02397FD7700B0D881 /* SignIn.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				E16932AB23884FC70017B4FE /* IntroView.swift in Sources */,
 				E18445F4238AB14700EA01C1 /* MainView.swift in Sources */,
+				E11C0BC12397FD7700B0D881 /* SignIn.swift in Sources */,
 				E18445E6238A77AD00EA01C1 /* ArtDetailView.swift in Sources */,
 				E18445E4238A6D5D00EA01C1 /* Artwork.swift in Sources */,
 				E1EEEAC4238EF86300188BA9 /* NetworkManager.swift in Sources */,

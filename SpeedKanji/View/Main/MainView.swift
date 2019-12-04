@@ -17,26 +17,29 @@ let network = NetworkManager()
 struct MainView: View {
     //State Variables
     @State var value: CGFloat = 0.0
+    var running:Bool = false
     
-   
-    
-
      var body: some View {
         
         ZStack {
             Color("appBackground").edgesIgnoringSafeArea(.all)
             VStack(alignment: .center, spacing: 20) {
-                    TopStack()
-                        .padding(.horizontal)
+//                    TopStack()
+//                        .padding(.horizontal)
                     Spacer()
                     
-                    CardView()
+                CardView(image: "kanji_img2")
                         .padding(.horizontal, 10)
                  
                     BottomStack()
                
-                    
+                HStack{
                     SimpleProgressBar()
+                    Image(systemName: running == true ? "pause.fill" : "play.fill")
+                    .resizable()
+                        .frame(width: 32, height: 32, alignment: .center)
+                        .padding(.top,30)
+                }
                 }
             .padding(.bottom, 15)
         }
@@ -44,87 +47,75 @@ struct MainView: View {
     }
 
 
-struct TopStack: View {
-    var body: some View {
-        HStack(alignment:.center) {
-                    button(for: "person")
-                        .foregroundColor(.primary)
-                    Spacer()
-                    button(for: "stop")
-                        .padding(.trailing)
-                        .foregroundColor(.primary)
-                    
-                    button(for: "arrow.right.circle")
-                        .padding(.trailing)
-                        .foregroundColor(.primary)
-                }
-    }
-}
+
 
 struct UserImageView : View {
+    let image:String
     var body: some View {
-        Image("kanjiimg")
+        Image(image)
         .resizable()
         .scaledToFit()
-        .cornerRadius(10, antialiased: true)
-        
-            
+        .shadow(radius: 0)
     }
 }
 
 
 struct CardView : View {
+    let image:String
     var body: some View {
         ZStack(alignment: .leading) {
-            UserImageView()
+            
+                UserImageView(image: image)
+            
             //UserInfoView()
         }
-        .shadow(radius: 2)
+        .shadow(radius: 10)
     }
 }
+
+
 
 struct BottomStack : View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: {network.fetchData(input_kanji: "東") }) {
-                     Text("ときう")
-                        .customButton(width:180)
-                        .padding(.all,10)
-                    .shadow(radius: 10)
-                    
-                }
+                gradientButton(btnText: "とうきょう")
+                    .padding(16)
                 
-                Button(action: {network.fetchN5()}) {
-                     Text("ときう")
-                        .customButton(width:180)
-                        .padding(.all,10)
-                    .shadow(radius: 10)
-                    
-                }
+                gradientButton(btnText: "ひがし")
+                .padding(16)
                 
             }
             //HStack 2
             HStack{
-                Button(action: {network.printDatabase()}) {
-                     Text("ときう")
-                        .customButton(width:180)
-                        .padding(.all,10)
-                    .shadow(radius: 10)
-                    
-                }
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                     Text("ときう")
-                        .customButton(width:180)
-                        .padding(.all,10)
-                    .shadow(radius: 10)
-                    
-                }
+                gradientButton(btnText: "あいだ")
+                .padding(16)
+                gradientButton(btnText: "たか")
+                .padding(16)
                 
             }
         }
     }
+    
+    
 }
+
+
+struct gradientButton:View{
+    let btnText:String
+    
+    var body:some View{
+        
+            Button(action: {network.fetchData(input_kanji: "東") }) {
+                Text(self.btnText)
+                    .fontWeight(.medium).foregroundColor(.white).padding()
+                
+            }.frame(width: 150).background(LinearGradient(gradient: .init(colors: [.orange,.red]), startPoint: .leading, endPoint: .trailing)).cornerRadius(20).shadow(radius: 10)
+            
+        }
+    }
+
+
 
 //Helper: To create buttons based on image asset name
 func button(for icon: String) -> some View {
@@ -137,6 +128,10 @@ func button(for icon: String) -> some View {
 }
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+           MainView()
+              .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+              .previewDisplayName("iPhone 11")
+        
+        
     }
 }

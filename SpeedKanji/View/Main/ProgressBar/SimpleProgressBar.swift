@@ -33,10 +33,11 @@ struct SimpleProgressBar: View {
                     
                 HStack {
                     Button(action: {self.startLoading()}) {
-                            Text("Start timer")
+                            Text(".")
+                                .foregroundColor(.gray)
                     }
                     Button(action: {self.currentProgress = self.currentProgress/5}) {
-                        Text("Correct")
+                        Text("")
                     }
                 }
                     
