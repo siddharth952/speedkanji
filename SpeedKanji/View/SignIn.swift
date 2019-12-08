@@ -43,9 +43,6 @@ struct SignIn: View {
                     .padding(.horizontal,18)
                 }
                 
-                
-                
-                
             }
         }
 

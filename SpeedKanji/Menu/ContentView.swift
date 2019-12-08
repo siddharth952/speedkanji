@@ -14,12 +14,8 @@ struct ContentView : View {
                 TopStack()
                 drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
                 drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
-            
-            
 
             }
-        
-        
  }
 }
 
@@ -106,10 +102,6 @@ struct TopStack: View {
                         .padding(.trailing)
                         .foregroundColor(.primary)
                 }
-      
-        
-        
-        
     }
 }
 

@@ -12,8 +12,6 @@ import SwiftUI
 let network = NetworkManager()
 
 
-
-
 struct MainView: View {
     //State Variables
     @State var value: CGFloat = 0.0
@@ -35,19 +33,21 @@ struct MainView: View {
                
                 HStack{
                     SimpleProgressBar()
-                    Image(systemName: running == true ? "pause.fill" : "play.fill")
-                    .resizable()
-                        .frame(width: 32, height: 32, alignment: .center)
-                        .padding(.top,30)
+                    Button(action: {print(network.database.count)}){
+                        
+                        Image(systemName: running == true ? "pause.fill" : "play.fill")
+                        .resizable()
+                            .frame(width: 32, height: 32, alignment: .center)
+                            .padding(.top,30)
+                        
+                    }
+                    
                 }
                 }
             .padding(.bottom, 15)
         }
         }
     }
-
-
-
 
 struct UserImageView : View {
     let image:String
@@ -106,7 +106,12 @@ struct gradientButton:View{
     
     var body:some View{
         
-            Button(action: {network.fetchData(input_kanji: "東") }) {
+            Button(action: {
+                if(network.database.isEmpty)
+                {for i in kanjiN5{
+                    network.fetchData(input_kanji: "\(i)")
+                }}
+                 }) {
                 Text(self.btnText)
                     .fontWeight(.medium).foregroundColor(.white).padding()
                 
