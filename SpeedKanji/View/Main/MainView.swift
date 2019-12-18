@@ -24,6 +24,10 @@ struct MainView: View {
             VStack(alignment: .center, spacing: 20) {
 //                    TopStack()
 //                        .padding(.horizontal)
+                
+                Button(action: {print(network.database[0])}) {
+                Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+                }
                     Spacer()
                     
                 CardView(image: "kanji_img2")
@@ -134,7 +138,7 @@ func button(for icon: String) -> some View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
            MainView()
-              .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+              .previewDevice(PreviewDevice(rawValue: "iPhone XR"))
               .previewDisplayName("iPhone 11")
         
         

@@ -10,6 +10,8 @@ struct ContentView : View {
         
         
         VStack(alignment: .center, spacing: 20){
+            
+            
            
                 TopStack()
                 drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
@@ -85,10 +87,9 @@ struct ContentView : View {
         }
     }
 
+/// Top Navigation
 struct TopStack: View {
    
-    
-    
     var body: some View {
         HStack(alignment:.center) {
                     button(for: "person.circle.fill")
@@ -104,6 +105,9 @@ struct TopStack: View {
                 }
     }
 }
+
+
+
 
 
 #if DEBUG

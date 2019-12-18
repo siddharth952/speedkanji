@@ -19,11 +19,19 @@ struct ResultView: View {
     ]
     
     var body: some View {
-        
+        TabView{
         ZStack{
             Color("appBackground").edgesIgnoringSafeArea(.all)
+            TopStack()
+            
+                .tabItem({
+            Image("icloud.and.arrow.down")
+            Text("Test")})
             
             VStack{
+                
+                
+                
                 
                 Text("Calory Intake")
                     .font(.system(size:34))
@@ -49,6 +57,7 @@ struct ResultView: View {
             }.padding(.top,350).animation(.linear)
             
         }
+    }
     }
 }
 

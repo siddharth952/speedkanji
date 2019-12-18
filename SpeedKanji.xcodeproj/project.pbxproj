@@ -17,10 +17,12 @@
 		E16932A0238848410017B4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E169329E238848410017B4FE /* LaunchScreen.storyboard */; };
 		E16932AB23884FC70017B4FE /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16932AA23884FC70017B4FE /* IntroView.swift */; };
 		E16CAFE1238974840005483D /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CAFE0238974840005483D /* BarView.swift */; };
+		E17A21A823AA68820034ADF0 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A21A723AA68820034ADF0 /* Components.swift */; };
 		E18445E4238A6D5D00EA01C1 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18445E3238A6D5D00EA01C1 /* Artwork.swift */; };
 		E18445E6238A77AD00EA01C1 /* ArtDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18445E5238A77AD00EA01C1 /* ArtDetailView.swift */; };
 		E18445EE238AAFC800EA01C1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E18445ED238AAFC800EA01C1 /* SwiftyJSON */; };
 		E18445F4238AB14700EA01C1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18445F3238AB14700EA01C1 /* MainView.swift */; };
+		E1AD17E223AA814E00D3182A /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD17E123AA814E00D3182A /* KeyboardFollower.swift */; };
 		E1C0541F238E5E0200949D01 /* SimpleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C0541E238E5E0200949D01 /* SimpleProgressBar.swift */; };
 		E1C05424238E6D7000949D01 /* resultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C05423238E6D7000949D01 /* resultView.swift */; };
 		E1E0510B2389A908001F22B2 /* IntroductionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */; };
@@ -43,9 +45,11 @@
 		E16932A1238848410017B4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E16932AA23884FC70017B4FE /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		E16CAFE0238974840005483D /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		E17A21A723AA68820034ADF0 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		E18445E3238A6D5D00EA01C1 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artwork.swift; path = "../../../../../../Downloads/SwiftUI-Nav-Materials/PublicArt-Starter/PublicArt/PublicArt/Artwork.swift"; sourceTree = "<group>"; };
 		E18445E5238A77AD00EA01C1 /* ArtDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailView.swift; sourceTree = "<group>"; };
 		E18445F3238AB14700EA01C1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E1AD17E123AA814E00D3182A /* KeyboardFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFollower.swift; sourceTree = "<group>"; };
 		E1C0541E238E5E0200949D01 /* SimpleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProgressBar.swift; sourceTree = "<group>"; };
 		E1C05423238E6D7000949D01 /* resultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultView.swift; sourceTree = "<group>"; };
 		E1E0510A2389A908001F22B2 /* IntroductionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionDetailView.swift; sourceTree = "<group>"; };
@@ -96,12 +100,14 @@
 		E16932922388483E0017B4FE /* SpeedKanji */ = {
 			isa = PBXGroup;
 			children = (
+				E1AD17DC23AA798A00D3182A /* Utils */,
 				E1EEEABD238EEE2100188BA9 /* Networking */,
 				E16CAFDE238974380005483D /* Controller */,
 				E16CAFDF238974420005483D /* Model */,
 				E16CAFE223897AFA0005483D /* View */,
 				E1C05421238E664500949D01 /* Menu */,
 				E1693299238848410017B4FE /* Assets.xcassets */,
+				E17A21A723AA68820034ADF0 /* Components.swift */,
 				E169329E238848410017B4FE /* LaunchScreen.storyboard */,
 				E16932932388483E0017B4FE /* AppDelegate.swift */,
 				E16932952388483E0017B4FE /* SceneDelegate.swift */,
@@ -153,6 +159,14 @@
 				E13ED0C2238D221000A78BFB /* ProgressBar */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		E1AD17DC23AA798A00D3182A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E1AD17E123AA814E00D3182A /* KeyboardFollower.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E1C05421238E664500949D01 /* Menu */ = {
@@ -287,6 +301,8 @@
 				E18445E4238A6D5D00EA01C1 /* Artwork.swift in Sources */,
 				E1EEEAC4238EF86300188BA9 /* NetworkManager.swift in Sources */,
 				E1C0541F238E5E0200949D01 /* SimpleProgressBar.swift in Sources */,
+				E17A21A823AA68820034ADF0 /* Components.swift in Sources */,
+				E1AD17E223AA814E00D3182A /* KeyboardFollower.swift in Sources */,
 				E1EEEABC238ECEC200188BA9 /* Kanji.swift in Sources */,
 				E16932942388483E0017B4FE /* AppDelegate.swift in Sources */,
 				E1E051162389B3B9001F22B2 /* ArtMainView.swift in Sources */,
