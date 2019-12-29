@@ -17,20 +17,26 @@ struct MainView: View {
     @State var value: CGFloat = 0.0
     var running:Bool = false
     
+    
+    
+    //MARK:Functions
+    private func getCorrectOption(currentKanji:Int){
+        
+        var correctOption = network.database[currentKanji].meaning
+    }
+    
      var body: some View {
         
         ZStack {
-            Color("appBackground").edgesIgnoringSafeArea(.all)
+            
             VStack(alignment: .center, spacing: 20) {
-//                    TopStack()
-//                        .padding(.horizontal)
                 
                 Button(action: {print(network.database[0])}) {
                 Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
                 }
                     Spacer()
                     
-                CardView(image: "kanji_img2")
+                CardView(image: network.database[0].imageURL)
                         .padding(.horizontal, 10)
                  
                     BottomStack()
@@ -135,6 +141,7 @@ func button(for icon: String) -> some View {
 
     }
 }
+
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
            MainView()

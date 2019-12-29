@@ -13,7 +13,6 @@ import SwiftyJSON
 
 struct Kanji:Identifiable {
   let id = UUID() // sys. gen. unique ID as we do not care of the actual value of it.
-  let onyomi: String
   let kunyomi:String
   let meaning:String
   let romaji: String

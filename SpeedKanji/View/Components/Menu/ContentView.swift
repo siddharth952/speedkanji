@@ -4,22 +4,70 @@ import SwiftUI
 
 struct ContentView : View {
     
+    @State private var isSettingsPresented = false
     
-    
+    private var settingButton: some View {
+    Button(action: {
+        self.isSettingsPresented = true
+    }) {
+        HStack {
+            Image(systemName: "wrench").imageScale(.medium)
+        }.frame(width: 30, height: 30)
+    }
+    }
     var body: some View {
         
-        
-        VStack(alignment: .center, spacing: 20){
-            
-            
-           
-                TopStack()
-                drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
-                drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
+        let view = Group {
+  
+            HStack {
 
+                Spacer(minLength: 16)
+            }.padding(32)
+            
+            VStack(alignment: .center) {
+                drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
+                              
+                drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
             }
- }
+            
+            
+            
+            
+        }
+        .navigationBarItems(trailing:
+            HStack {
+                
+                settingButton
+            }
+        ).sheet(isPresented: $isSettingsPresented,
+                content: { SettingsForm() })
+
+//        VStack(alignment: .center, spacing: 20){
+//
+//
+//
+//                TopStack()
+//                drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
+//                drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
+//
+//            }
+        return navigationView(content: AnyView(view))
+    }
+    
+    
 }
+
+
+
+private func navigationView(content: AnyView) -> some View {
+    Group {
+        
+            NavigationView {
+                content
+            }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+        
+        }
+    }
 
 
     
@@ -105,6 +153,7 @@ struct TopStack: View {
                 }
     }
 }
+
 
 
 

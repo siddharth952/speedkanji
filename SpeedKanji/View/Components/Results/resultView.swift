@@ -19,20 +19,8 @@ struct ResultView: View {
     ]
     
     var body: some View {
-        TabView{
-        ZStack{
-            Color("appBackground").edgesIgnoringSafeArea(.all)
-            TopStack()
-            
-                .tabItem({
-            Image("icloud.and.arrow.down")
-            Text("Test")})
-            
+        
             VStack{
-                
-                
-                
-                
                 Text("Calory Intake")
                     .font(.system(size:34))
                     .fontWeight(.heavy)
@@ -43,7 +31,7 @@ struct ResultView: View {
                     Text("Year").tag(2)
                     }.pickerStyle(SegmentedPickerStyle()).padding(32)
                 
-            }
+           
             
             HStack(spacing: 16){
                 BarView(value: timeSelected[pickerSelectedItem][0],day_text: "M")
@@ -55,11 +43,12 @@ struct ResultView: View {
                 BarView(value: timeSelected[pickerSelectedItem][6],day_text: "S")
 
             }.padding(.top,350).animation(.linear)
+    }
             
         }
-    }
-    }
+    
 }
+
 
 
 

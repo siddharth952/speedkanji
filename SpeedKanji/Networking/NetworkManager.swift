@@ -49,7 +49,7 @@ class NetworkManager:ObservableObject{
                         
                         let kanjiJSON: JSON = JSON(kanjiResponse)
                         
-                        self.database.append(Kanji(onyomi: kanjiJSON["kanji"]["onyomi"]["katakana"].stringValue, kunyomi: kanjiJSON["kanji"]["kunyomi"]["hiragana"].stringValue, meaning: kanjiJSON["kanji"]["meaning"].stringValue, romaji: kanjiJSON["kanji"]["kunyomi"]["romaji"].stringValue, imageURL: kanjiJSON["kanji"]["video"]["poster"].stringValue,videoURL: kanjiJSON["kanji"]["video"]["mp4"].stringValue,examples: kanjiJSON["examples"].arrayValue))
+                        self.database.append(Kanji(kunyomi: kanjiJSON["kanji"]["kunyomi"]["hiragana"].stringValue, meaning: kanjiJSON["kanji"]["meaning"].stringValue, romaji: kanjiJSON["kanji"]["kunyomi"]["romaji"].stringValue, imageURL: kanjiJSON["kanji"]["video"]["poster"].stringValue,videoURL: kanjiJSON["kanji"]["video"]["mp4"].stringValue,examples: kanjiJSON["examples"].arrayValue))
                         
                         
                         //print test

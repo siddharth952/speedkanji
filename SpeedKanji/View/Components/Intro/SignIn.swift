@@ -26,8 +26,11 @@ struct SignIn: View {
             
             
             var body: some View {
+                
+                
 
                 ZStack{
+                    
                     LinearGradient(gradient: .init(colors: [Color("1"),Color("2")]), startPoint: .leading, endPoint: .trailing).edgesIgnoringSafeArea(.all)
                     
                     

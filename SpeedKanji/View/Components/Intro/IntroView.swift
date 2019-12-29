@@ -10,55 +10,46 @@
 import SwiftUI
 
 struct IntroView:View{
-    
-    
-    //State Variables
-    
+
     var body:some View{
-        
-        ZStack{
-            Color("appBackground").edgesIgnoringSafeArea(.all)
-            
+        NavigationView {
             VStack(alignment:.center){
-                
-                Spacer()
-                
-                TitleView()
-                
-                Spacer()
-                
-                VStack(alignment: .leading) {
-                    InformationDetailView(title: "Match", subTitle: "Match the gradients by moving the Red, Green and Blue sliders for the left and right colors.", imageName: "slider.horizontal.below.rectangle")
-
-                    InformationDetailView(title: "Precise", subTitle: "More precision with the steppers to get that 100 score.", imageName: "minus.slash.plus")
-
-                    InformationDetailView(title: "Score", subTitle: "A detailed score and comparsion of your gradient and the target gradient.", imageName: "checkmark.square")
+                    Spacer()
+                    
+                    TitleView()
                     
                     Spacer()
-                }
-                .padding(.horizontal)
-                
-                Button(action: {
+                    VStack(alignment: .leading) {
+                        InformationDetailView(title: "Match", subTitle: "Match the gradients by moving the Red, Green and Blue sliders for the left and right colors.", imageName: "slider.horizontal.below.rectangle")
+                        InformationDetailView(title: "Precise", subTitle: "More precision with the steppers to get that 100 score.", imageName: "minus.slash.plus")
+                        InformationDetailView(title: "Score", subTitle: "A detailed score and comparsion of your gradient and the target gradient.", imageName: "checkmark.square")
+                        Spacer()
+                    }
+                    .padding(.horizontal)
                     
-                    let generator = UINotificationFeedbackGenerator()
-                    generator.notificationOccurred(.success)
+                    Button(action: {
+                        
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
+                        
+                    }) {
+                     
+                            NavigationLink(destination: ContentView()){
+                                Text("Continue")
+                                }.customButton(width:360)
+                        
+                    }
+                    .padding(.bottom, 5)
+                    .padding(.horizontal)
                     
-                }) {
-                    Text("Continue")
-                        .customButton(width:360)
-                }
-                .padding(.bottom, 5)
-                .padding(.horizontal)
-                
             }
         }
+   
         
-        
-        
+    }
+    
+    
 }
-    
-    
-    
     
     
 //    //State variable
@@ -103,7 +94,7 @@ struct IntroView:View{
 //    }
     
     
-}
+
 
 struct MainPreview:PreviewProvider{
     static var previews: some View{
