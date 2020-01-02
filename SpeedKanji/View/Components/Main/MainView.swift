@@ -36,12 +36,11 @@ struct MainView: View {
             VStack(alignment: .center, spacing: 20) {
                 
                 Button(action: {print(network.database[0])
-                    
-                    
-                    
                 }) {
                 Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
                 }
+                
+                
                     Spacer()
                     
                  
@@ -49,9 +48,9 @@ struct MainView: View {
                     
                     ForEach(options,id: \.self){ option in
                         HStack {
-                            Text(option)
                             gradientButton(btnText: option)
                         }
+                        
 
                     }
                     

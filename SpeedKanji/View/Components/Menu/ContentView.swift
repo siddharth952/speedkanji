@@ -7,6 +7,8 @@ struct ContentView : View {
     @State private var isSettingsPresented = false
     @State private var action: Int? = 0
     
+    
+    
     private var settingButton: some View {
     Button(action: {
         self.isSettingsPresented = true
@@ -41,16 +43,10 @@ struct ContentView : View {
 
         let view = NavigationView {
             Group {
-      
-                HStack {
 
-                    Spacer(minLength: 16)
-                }.padding(32)
                 
                 VStack(alignment: .center) {
-                    NavigationLink(destination: MainView(), tag: 1, selection: $action) {
-                        EmptyView()
-                    }
+                    
                     drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
                                   
                     drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
@@ -59,11 +55,12 @@ struct ContentView : View {
                                EmptyView()
                            }
 
-
+                        Spacer()
                            Text("Click for MainView")
                                .onTapGesture {
                     //perform some tasks if needed before opening Destination view
-                                generateOptions(currentKanji: 0)
+                                let number = Int.random(in: 0 ..< 70)
+                                generateOptions(currentKanji: number)
                                    self.action = 1
                            }
                 }
