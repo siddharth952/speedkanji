@@ -21,12 +21,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
+        
+
+        if(network.database.isEmpty)
+        {for i in kanjiN5{
+            network.fetchData(input_kanji: "\(i)")
+            }}else{
+            
+        }
+        
+    
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
            // window.rootViewController = UIHostingController(rootView: contentView)
-            window.rootViewController = UIHostingController(rootView:IntroView())
+            window.rootViewController = UIHostingController(rootView:ContentView())
             
             self.window = window
             window.makeKeyAndVisible()

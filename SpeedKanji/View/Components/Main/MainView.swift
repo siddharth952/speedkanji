@@ -8,8 +8,15 @@
 
 import SwiftUI
 
+
+//if(network.database.isEmpty)
+//{for i in kanjiN5{
+//    network.fetchData(input_kanji: "\(i)")
+//}}
+
 //Networking
 let network = NetworkManager()
+var options:[String] = []
 
 
 struct MainView: View {
@@ -20,10 +27,7 @@ struct MainView: View {
     
     
     //MARK:Functions
-    private func getCorrectOption(currentKanji:Int){
-        
-        var correctOption = network.database[currentKanji].meaning
-    }
+     
     
      var body: some View {
         
@@ -31,15 +35,27 @@ struct MainView: View {
             
             VStack(alignment: .center, spacing: 20) {
                 
-                Button(action: {print(network.database[0])}) {
+                Button(action: {print(network.database[0])
+                    
+                    
+                    
+                }) {
                 Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
                 }
                     Spacer()
                     
-                CardView(image: network.database[0].imageURL)
-                        .padding(.horizontal, 10)
                  
-                    BottomStack()
+                VStack{
+                    
+                    ForEach(options,id: \.self){ option in
+                        HStack {
+                            Text(option)
+                            gradientButton(btnText: option)
+                        }
+
+                    }
+                    
+                }
                
                 HStack{
                     SimpleProgressBar()
@@ -85,30 +101,31 @@ struct CardView : View {
 
 
 
-struct BottomStack : View {
-    var body: some View {
-        VStack {
-            HStack {
-                gradientButton(btnText: "とうきょう")
-                    .padding(16)
-                
-                gradientButton(btnText: "ひがし")
-                .padding(16)
-                
-            }
-            //HStack 2
-            HStack{
-                gradientButton(btnText: "あいだ")
-                .padding(16)
-                gradientButton(btnText: "たか")
-                .padding(16)
-                
-            }
-        }
-    }
-    
-    
-}
+//struct BottomStack : View {
+//    var body: some View {
+//        VStack {
+//            HStack {
+//
+//                gradientButton(btnText: "とうきょう")
+//                    .padding(16)
+//
+//                gradientButton(btnText: "ひがし")
+//                .padding(16)
+//
+//            }
+//            //HStack 2
+//            HStack{
+//                gradientButton(btnText: "あいだ")
+//                .padding(16)
+//                gradientButton(btnText: "たか")
+//                .padding(16)
+//
+//            }
+//        }
+//    }
+//
+//
+//}
 
 
 struct gradientButton:View{

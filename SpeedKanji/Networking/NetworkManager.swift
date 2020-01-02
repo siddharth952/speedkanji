@@ -13,6 +13,15 @@ import SwiftyJSON
 class NetworkManager:ObservableObject{
     
     @Published var database = [Kanji]()
+    
+    
+    func storeKanji(){
+        
+    }
+    
+    func retriveKanji() -> [Kanji]? {
+        return nil
+    }
 
     let header:HTTPHeaders = [
         "x-rapidapi-key": "ecb5a738a9mshc600324f7e92755p1fa7a1jsncfbc6c554a76"]
@@ -49,7 +58,7 @@ class NetworkManager:ObservableObject{
                         
                         let kanjiJSON: JSON = JSON(kanjiResponse)
                         
-                        self.database.append(Kanji(kunyomi: kanjiJSON["kanji"]["kunyomi"]["hiragana"].stringValue, meaning: kanjiJSON["kanji"]["meaning"].stringValue, romaji: kanjiJSON["kanji"]["kunyomi"]["romaji"].stringValue, imageURL: kanjiJSON["kanji"]["video"]["poster"].stringValue,videoURL: kanjiJSON["kanji"]["video"]["mp4"].stringValue,examples: kanjiJSON["examples"].arrayValue))
+                        self.database.append(Kanji(kunyomi: kanjiJSON["kanji"]["kunyomi"]["hiragana"].stringValue, meaning: kanjiJSON["kanji"]["meaning"]["english"].stringValue, romaji: kanjiJSON["kanji"]["kunyomi"]["romaji"].stringValue, imageURL: kanjiJSON["kanji"]["video"]["poster"].stringValue,videoURL: kanjiJSON["kanji"]["video"]["mp4"].stringValue,examples: kanjiJSON["examples"].arrayValue))
                         
                         
                         //print test

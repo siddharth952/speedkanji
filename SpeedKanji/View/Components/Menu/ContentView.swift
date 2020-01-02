@@ -5,6 +5,7 @@ import SwiftUI
 struct ContentView : View {
     
     @State private var isSettingsPresented = false
+    @State private var action: Int? = 0
     
     private var settingButton: some View {
     Button(action: {
@@ -17,30 +18,68 @@ struct ContentView : View {
     }
     var body: some View {
         
-        let view = Group {
-  
-            HStack {
-
-                Spacer(minLength: 16)
-            }.padding(32)
+        
+        func generateOptions(currentKanji:Int){
+            var correctOption:String
+            var number:Int
             
-            VStack(alignment: .center) {
-                drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
-                              
-                drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
+                options.removeAll()
+            
+            
+            //Correct options
+            correctOption = network.database[currentKanji].kunyomi
+            options.append(correctOption)
+            
+            //Random Options
+            for _ in 0...2{
+                number = Int.random(in: 0 ..< 70)
+                options.append(network.database[number].kunyomi)
             }
-            
-            
-            
             
         }
-        .navigationBarItems(trailing:
-            HStack {
+        
+
+        let view = NavigationView {
+            Group {
+      
+                HStack {
+
+                    Spacer(minLength: 16)
+                }.padding(32)
                 
-                settingButton
+                VStack(alignment: .center) {
+                    NavigationLink(destination: MainView(), tag: 1, selection: $action) {
+                        EmptyView()
+                    }
+                    drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
+                                  
+                    drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
+                    
+                    NavigationLink(destination: MainView(), tag: 1, selection: $action) {
+                               EmptyView()
+                           }
+
+
+                           Text("Click for MainView")
+                               .onTapGesture {
+                    //perform some tasks if needed before opening Destination view
+                                generateOptions(currentKanji: 0)
+                                   self.action = 1
+                           }
+                }
+                
+                
+                
+                
             }
-        ).sheet(isPresented: $isSettingsPresented,
+            .navigationBarItems(trailing:
+                HStack {
+                    
+                    settingButton
+                }
+            ).sheet(isPresented: $isSettingsPresented,
                 content: { SettingsForm() })
+        }
 
 //        VStack(alignment: .center, spacing: 20){
 //
@@ -72,6 +111,7 @@ private func navigationView(content: AnyView) -> some View {
 
     
     struct drawCard:View {
+
         @State var show = false
         let headerText:String
         let detailText:String
