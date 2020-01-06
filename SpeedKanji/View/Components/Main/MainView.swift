@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 
 //if(network.database.isEmpty)
@@ -17,14 +18,17 @@ import SwiftUI
 //Networking
 let network = NetworkManager()
 var options:[String] = []
-
+var options_0_1:[String] = []
+var options_2_3:[String] = []
 
 struct MainView: View {
     ///State Variables
     @State var value: CGFloat = 0.0
         @State var progress:CGFloat = 0.00
         @State var wordsCount:Int = kanjiN5.count
+    @State var curr_imageURL:String = ""
     
+
     
     
     var running:Bool = false
@@ -39,10 +43,19 @@ struct MainView: View {
             
             VStack(alignment: .center, spacing: 20) {
                 
-                Button(action: {print(network.database[0])
+                Button(action: {print(network.database)
                 }) {
-                Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+                Text("[DEBUG]Print")
                 }
+                
+               WebImage(url: URL(string: "https://media.kanjialive.com/kanji_strokes/1_1.svg"))
+                .antialiased(true)
+                .resizable() // Resizable like SwiftUI.Image
+                .placeholder(Image("photo")) // Placeholder Image
+                .scaledToFit()
+                .frame(width: 200, height: 300, alignment: .center)
+                
+                
                 
                 
                     Spacer()
@@ -50,18 +63,39 @@ struct MainView: View {
                  
                 VStack{
                     
-                    ForEach(options,id: \.self){ option in
-                        HStack {
+                    
+                    HStack {
+                        ForEach(options_0_1,id: \.self){ option in
+                        
+                            
                             Button(action: {
-                                
-                                self.checkAnswer(tappedAnswer: option)}) {
-                                Text(option)
-                                    .fontWeight(.medium).foregroundColor(.white).padding()
-                                
-                            }.frame(width: 150).background(LinearGradient(gradient: .init(colors: [.orange,.red]), startPoint: .leading, endPoint: .trailing)).cornerRadius(20).shadow(radius: 10)
-                        }
+                            self.checkAnswer(tappedAnswer: option)}) {
+                            Text(option)
+                                .fontWeight(.medium).foregroundColor(.white).padding()
+                            
+                                }.frame(width: 150).background(LinearGradient(gradient: .init(colors: [.orange,.red]), startPoint: .leading, endPoint: .trailing)).cornerRadius(20).shadow(radius: 10)
+                            
+                            
 
-                }
+                        }
+                    }.padding()
+                    
+                    HStack {
+                        ForEach(options_2_3,id: \.self){ option in
+                        
+                            
+                            Button(action: {
+                            self.checkAnswer(tappedAnswer: option)}) {
+                            Text(option)
+                                .fontWeight(.medium).foregroundColor(.white).padding()
+                            
+                                }.frame(width: 150).background(LinearGradient(gradient: .init(colors: [.orange,.red]), startPoint: .leading, endPoint: .trailing)).cornerRadius(20).shadow(radius: 10)
+                            
+                            
+
+                        }
+                    }
+                    
                
                 HStack{
                     //SimpleProgressBar(currentProgress: progress, wordsleft: wordsCount)
@@ -119,6 +153,12 @@ struct MainView: View {
                   }
            
         self.wordsCount -= 1
+        
+        ///For image
+        curr_imageURL = network.database[currentKanji].imageURL
+        
+        options_0_1 = [options[0],options[1]]
+        options_2_3 = [options[2],options[3]]
                   
               }
     

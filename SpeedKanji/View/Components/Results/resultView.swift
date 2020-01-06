@@ -21,7 +21,7 @@ struct ResultView: View {
     var body: some View {
         
             VStack{
-                Text("Calory Intake")
+                Text("Your Results! 🤩")
                     .font(.system(size:34))
                     .fontWeight(.heavy)
                 

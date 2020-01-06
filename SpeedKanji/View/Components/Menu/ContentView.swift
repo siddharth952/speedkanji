@@ -19,6 +19,8 @@ struct ContentView : View {
     }
     }
     
+    
+    
     var body: some View {
         
         
@@ -40,6 +42,14 @@ struct ContentView : View {
                 options.append(network.database[number].kunyomi)
             }
             
+            ///For image
+            //curr_imageURL = network.database[currentKanji].imageURL
+            
+            options_0_1 = [options[0],options[1]]
+            options_2_3 = [options[2],options[3]]
+            
+            
+            
         }
         
 
@@ -55,7 +65,7 @@ struct ContentView : View {
                            }
 
                         Spacer()
-                           Text("Click for MainView")
+                           Text(".")
                                .onTapGesture {
                     //perform some tasks if needed before opening Destination view
                                 let number = Int.random(in: 0 ..< 70)

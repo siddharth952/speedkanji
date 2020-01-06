@@ -291,6 +291,7 @@
 				E18445EC238AAFC800EA01C1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				E13B0E4B2390368100FF8A9A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E1B7177423C387FF00BC342F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				E1B7177723C38FB500BC342F /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
 			);
 			productRefGroup = E16932912388483E0017B4FE /* Products */;
 			projectDirPath = "";
@@ -554,6 +555,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.10.0;
+			};
+		};
+		E1B7177723C38FB500BC342F /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

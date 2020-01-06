@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "SDWebImageSVGCoder",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImageSVGCoder.git",
+        "state": {
+          "branch": null,
+          "revision": "dd4e6f4a91f8a5750b82a119288ca8c81d5b31c7",
+          "version": "1.2.1"
+        }
+      },
+      {
         "package": "SDWebImageSwiftUI",
         "repositoryURL": "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
         "state": {
