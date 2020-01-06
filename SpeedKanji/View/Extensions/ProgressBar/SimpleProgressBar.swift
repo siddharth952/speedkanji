@@ -9,14 +9,9 @@
 import SwiftUI
 
 struct SimpleProgressBar: View {
-    
-    @State var currentProgress: CGFloat = 0.0
-    @State var wordsleft:Int = 0
-    
-    
-    
+    @State var currentProgress: CGFloat
+    @State var wordsleft:Int
     var body: some View {
-        
         VStack {
             HStack{
                 Text("Words left:\(String(wordsleft))")
@@ -40,13 +35,8 @@ struct SimpleProgressBar: View {
                         Text("")
                     }
                 }
-                    
-                    
-                    
             }
         }
-            
-        
     }
 
     
@@ -70,7 +60,7 @@ struct SimpleProgressBar: View {
 
 struct SimpleProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        SimpleProgressBar()
+        SimpleProgressBar(currentProgress: 1, wordsleft: 82)
     }
 }
 

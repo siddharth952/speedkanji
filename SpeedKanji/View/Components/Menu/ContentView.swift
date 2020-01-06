@@ -18,13 +18,15 @@ struct ContentView : View {
         }.frame(width: 30, height: 30)
     }
     }
+    
     var body: some View {
         
         
         func generateOptions(currentKanji:Int){
+            ///First element of options array is always the correct option
             var correctOption:String
             var number:Int
-            
+
                 options.removeAll()
             
             
@@ -41,15 +43,12 @@ struct ContentView : View {
         }
         
 
-        let view = NavigationView {
-            Group {
-
-                
+        let view = Group {
                 VStack(alignment: .center) {
                     
-                    drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
+                    drawCard(headerText: "Learn N5 Kanji", detailText: "At the N5 level, the JLPT expects you to know about 100 kanji to pass. These kanji can change slightly between tests, but you can generally expect to see the 100 most common kanji for verbs, numbers, time, places, people, basic adjectives, and directions.",myColor: Color.blue)
                                   
-                    drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
+                    drawCard(headerText: "Learn N4 Kanji", detailText: "181 additional kanji you need to know to pass the JLPT N4 test. These are the kanji you need to learn on top of the 104 kanji required for the JLPT N5.",myColor: Color.gray)
                     
                     NavigationLink(destination: MainView(), tag: 1, selection: $action) {
                                EmptyView()
@@ -63,9 +62,6 @@ struct ContentView : View {
                                 generateOptions(currentKanji: number)
                                    self.action = 1
                            }
-                }
-                
-                
                 
                 
             }
@@ -77,16 +73,6 @@ struct ContentView : View {
             ).sheet(isPresented: $isSettingsPresented,
                 content: { SettingsForm() })
         }
-
-//        VStack(alignment: .center, spacing: 20){
-//
-//
-//
-//                TopStack()
-//                drawCard(headerText: "Learn N5 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.blue)
-//                drawCard(headerText: "Learn N4 Kanji", detailText: "Animatable cards with Spring, custom frame and some paddings. Also use SFSymbol for icon in the bottom button. Tap to button fo see fill style of this icon.",myColor: Color.gray)
-//
-//            }
         return navigationView(content: AnyView(view))
     }
     
@@ -170,6 +156,8 @@ private func navigationView(content: AnyView) -> some View {
             .shadow(radius: 20)
             .animation(.spring())
         }
+        
+        
     }
 
 /// Top Navigation

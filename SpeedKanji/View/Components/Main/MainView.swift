@@ -20,14 +20,18 @@ var options:[String] = []
 
 
 struct MainView: View {
-    //State Variables
+    ///State Variables
     @State var value: CGFloat = 0.0
+        @State var progress:CGFloat = 0.00
+        @State var wordsCount:Int = kanjiN5.count
+    
+    
+    
     var running:Bool = false
     
     
     
-    //MARK:Functions
-     
+
     
      var body: some View {
         
@@ -48,23 +52,44 @@ struct MainView: View {
                     
                     ForEach(options,id: \.self){ option in
                         HStack {
-                            gradientButton(btnText: option)
+                            Button(action: {
+                                
+                                self.checkAnswer(tappedAnswer: option)}) {
+                                Text(option)
+                                    .fontWeight(.medium).foregroundColor(.white).padding()
+                                
+                            }.frame(width: 150).background(LinearGradient(gradient: .init(colors: [.orange,.red]), startPoint: .leading, endPoint: .trailing)).cornerRadius(20).shadow(radius: 10)
                         }
-                        
 
-                    }
-                    
                 }
                
                 HStack{
-                    SimpleProgressBar()
+                    //SimpleProgressBar(currentProgress: progress, wordsleft: wordsCount)
+                    VStack {
+                        HStack{
+                            Text("Words left:\(String(wordsCount))")
+                                .fontWeight(.heavy)
+                        }
+                        ZStack(alignment: .leading){
+                                RoundedRectangle(cornerRadius: 20)
+                                    .foregroundColor(.gray)
+                                    .frame(width:300,height: 20)
+                                
+                                RoundedRectangle(cornerRadius: 20)
+                                    .foregroundColor(.red)
+                                    .frame(width:300*self.progress+0.2,height:20)
+                                
+                            }
+                        }
+
                     Button(action: {print(network.database.count)}){
                         
                         Image(systemName: running == true ? "pause.fill" : "play.fill")
                         .resizable()
                             .frame(width: 32, height: 32, alignment: .center)
                             .padding(.top,30)
-                        
+                    }
+
                     }
                     
                 }
@@ -72,6 +97,52 @@ struct MainView: View {
             .padding(.bottom, 15)
         }
         }
+    
+    
+    //MARK:Functions
+       func generateOptions(currentKanji:Int){
+                  ///First element of options array is always the correct option
+                  var correctOption:String
+                  var number:Int
+
+                      options.removeAll()
+                  
+                  
+                  //Correct options
+                  correctOption = network.database[currentKanji].kunyomi
+                  options.append(correctOption)
+                  
+                  //Random Options
+                  for _ in 0...2{
+                      number = Int.random(in: 0 ..< 70)
+                      options.append(network.database[number].kunyomi)
+                  }
+           
+        self.wordsCount -= 1
+                  
+              }
+    
+    func checkAnswer(tappedAnswer: String) {
+           if(tappedAnswer == options[0]){
+               print("Correct!")
+               //generate for next question
+            
+            let number = Int.random(in: 0 ..< 70)
+            generateOptions(currentKanji: number)
+               
+               
+               //update progressBar
+            self.progress += 0.012345679012346 // 1/81
+           // self.wordsCount -= 1
+               
+               
+           }
+           else{
+               print("Wrong!")
+               //TODO:make the button un-clickable and change color to gray
+           }
+       }
+    
     }
 
 struct UserImageView : View {
@@ -91,60 +162,23 @@ struct CardView : View {
         ZStack(alignment: .leading) {
             
                 UserImageView(image: image)
-            
-            //UserInfoView()
         }
         .shadow(radius: 10)
     }
 }
 
 
-
-//struct BottomStack : View {
-//    var body: some View {
-//        VStack {
-//            HStack {
-//
-//                gradientButton(btnText: "とうきょう")
-//                    .padding(16)
-//
-//                gradientButton(btnText: "ひがし")
-//                .padding(16)
-//
-//            }
-//            //HStack 2
-//            HStack{
-//                gradientButton(btnText: "あいだ")
-//                .padding(16)
-//                gradientButton(btnText: "たか")
-//                .padding(16)
-//
-//            }
-//        }
-//    }
-//
-//
+////protocol
+//protocol OnClickCheck {
+//    func checkAnswer(tappedAnswer:String)
 //}
 
+//struct gradientButton:View,OnClickCheck{
+//    let btnText:String
+//    var body:some View{
+//        }
+//    }
 
-struct gradientButton:View{
-    let btnText:String
-    
-    var body:some View{
-        
-            Button(action: {
-                if(network.database.isEmpty)
-                {for i in kanjiN5{
-                    network.fetchData(input_kanji: "\(i)")
-                }}
-                 }) {
-                Text(self.btnText)
-                    .fontWeight(.medium).foregroundColor(.white).padding()
-                
-            }.frame(width: 150).background(LinearGradient(gradient: .init(colors: [.orange,.red]), startPoint: .leading, endPoint: .trailing)).cornerRadius(20).shadow(radius: 10)
-            
-        }
-    }
 
 
 
@@ -157,6 +191,17 @@ func button(for icon: String) -> some View {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
