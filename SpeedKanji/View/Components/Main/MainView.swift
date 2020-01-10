@@ -24,8 +24,8 @@ var options_2_3:[String] = []
 struct MainView: View {
     ///State Variables
     @State var value: CGFloat = 0.0
-        @State var progress:CGFloat = 0.00
-        @State var wordsCount:Int = kanjiN5.count
+    @State var progress:CGFloat = 0.00
+    @State var wordsCount:Int = kanjiN5.count
     @State var curr_imageURL:String = ""
     
 
@@ -33,10 +33,7 @@ struct MainView: View {
     
     var running:Bool = false
     
-    
-    
-
-    
+  
      var body: some View {
         
         ZStack {
@@ -54,10 +51,8 @@ struct MainView: View {
                 .placeholder(Image("photo")) // Placeholder Image
                 .scaledToFit()
                 .frame(width: 200, height: 300, alignment: .center)
-                
-                
-                
-                
+
+
                     Spacer()
                     
                  
@@ -231,11 +226,6 @@ func button(for icon: String) -> some View {
 
     }
 }
-
-
-
-
-
 
 
 

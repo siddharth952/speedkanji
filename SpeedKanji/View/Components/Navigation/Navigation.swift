@@ -19,6 +19,10 @@ struct Navigation: View {
                 Image(systemName: "list.dash").resizable()
                 Text("Result")
                 }).tag(1)
+            DataManager().tabItem({
+                Image(systemName: "pencil").resizable()
+                Text("Data")
+                }).tag(2)
         }
     }
 }
