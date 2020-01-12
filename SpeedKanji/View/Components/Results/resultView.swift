@@ -31,6 +31,14 @@ struct ResultView: View {
                     Text("Year").tag(2)
                     }.pickerStyle(SegmentedPickerStyle()).padding(32)
                 
+                HStack {
+                    PopularityBadge(score: 80)
+                    PopularityBadge(score: 10)
+                    PopularityBadge(score: 30)
+                    PopularityBadge(score: 50)
+                }
+                
+                
            
             
             HStack(spacing: 16){
@@ -42,7 +50,7 @@ struct ResultView: View {
                 BarView(value: timeSelected[pickerSelectedItem][5],day_text: "S")
                 BarView(value: timeSelected[pickerSelectedItem][6],day_text: "S")
 
-            }.padding(.top,350).animation(.linear)
+            }.padding(.top,150).animation(.linear)
     }
             
         }

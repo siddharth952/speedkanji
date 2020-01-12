@@ -31,7 +31,7 @@ func generateOptions(currentKanji:Int){
 
 struct ContentView : View {
     @State private var isSettingsPresented = false
-    @State private var action: Int? = 0
+    @State private var activateLink: Int? = 0
     
     
     
@@ -51,11 +51,11 @@ struct ContentView : View {
 
             VStack(alignment: .center) {
                 
-                drawCard(actionDrawCard: self.$action, headerText: "Learn N5 Kanji", detailText: "At the N5 level, the JLPT expects you to know about 100 kanji to pass. These kanji can change slightly between tests, but you can generally expect to see the 100 most common kanji for verbs, numbers, time, places, people, basic adjectives, and directions.",myColor: Color.blue)
+                drawCard(actionDrawCard: self.$activateLink, headerText: "Learn N5 Kanji", detailText: "At the N5 level, the JLPT expects you to know about 100 kanji to pass. These kanji can change slightly between tests, but you can generally expect to see the 100 most common kanji for verbs, numbers, time, places, people, basic adjectives, and directions.",myColor: Color.blue)
                 
-                drawCard(actionDrawCard: self.$action, headerText: "Learn N4 Kanji", detailText: "181 additional kanji you need to know to pass the JLPT N4 test. These are the kanji you need to learn on top of the 104 kanji required for the JLPT N5.",myColor: Color.gray)
+                drawCard(actionDrawCard: self.$activateLink, headerText: "Learn N4 Kanji", detailText: "181 additional kanji you need to know to pass the JLPT N4 test. These are the kanji you need to learn on top of the 104 kanji required for the JLPT N5.",myColor: Color.gray)
                 
-                NavigationLink(destination: MainView(), tag: 1, selection: $action) {
+                NavigationLink(destination: MainView(), tag: 1, selection: $activateLink) {
                     EmptyView()
                 }
                 
