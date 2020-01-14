@@ -236,8 +236,8 @@ func button(for icon: String) -> some View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
            MainView()
-              .previewDevice(PreviewDevice(rawValue: "iPhone XR"))
-              .previewDisplayName("iPhone 11")
+              .previewDevice(PreviewDevice(rawValue: "iPhone 7"))
+              .previewDisplayName("iPhone 7")
         
         
     }
