@@ -128,7 +128,7 @@ struct MainView: View {
         }
     
     
-    //MARK:Functions
+    //MARK: - Functions
        func generateOptions(currentKanji:Int){
                   ///First element of options array is always the correct option
                   var correctOption:String
